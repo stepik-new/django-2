@@ -40,6 +40,7 @@ class TourView(View):
         current_tour = tours[id]
         context = {
             'tour': current_tour,
+            'tour_id': id,
             'departure': departures[current_tour['departure']],
             'menu': departures
         }
