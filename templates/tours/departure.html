@@ -8,7 +8,8 @@
     <!-- CARDS -->
 
       <div class="row mt-5" data-test="cards">
-          {% for tour in tours.values %}
+          {% for id, tour in tours.items %}
+
             {% include 'includes/tour-card.html' %}
           {% endfor %}
 

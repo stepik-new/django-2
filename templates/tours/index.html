@@ -13,7 +13,7 @@
 
     <div class="row mt-5" data-test="cards">
 
-        {% for tour in tours.values %}
+        {% for id, tour in tours.items %}
             {% if forloop.counter <= 6 %}
                 {% include 'includes/tour-card.html' %}
             {% endif %}
