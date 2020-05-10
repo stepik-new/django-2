@@ -28,6 +28,7 @@ class DepartureView(View):
             'max_price': max([tour['price'] for tour in dep_tours.values()]),
             'min_nights': min([tour['nights'] for tour in dep_tours.values()]),
             'max_nights': min([tour['nights'] for tour in dep_tours.values()]),
+            'active_link': departure,
             'menu': departures
         }
         return render(request, 'tours/departure.html', context=context)
