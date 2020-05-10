@@ -11,6 +11,7 @@ class MainView(View):
 
         context = {
             'tours': shuffle_dict(tours),
+            'menu': departures
         }
         return render(request, 'tours/index.html', context=context)
 
@@ -26,7 +27,8 @@ class DepartureView(View):
             'min_price': min([tour['price'] for tour in dep_tours.values()]),
             'max_price': max([tour['price'] for tour in dep_tours.values()]),
             'min_nights': min([tour['nights'] for tour in dep_tours.values()]),
-            'max_nights': min([tour['nights'] for tour in dep_tours.values()])
+            'max_nights': min([tour['nights'] for tour in dep_tours.values()]),
+            'menu': departures
         }
         return render(request, 'tours/departure.html', context=context)
 
@@ -38,6 +40,7 @@ class TourView(View):
         current_tour = tours[id]
         context = {
             'tour': current_tour,
-            'departure': departures[current_tour['departure']]
+            'departure': departures[current_tour['departure']],
+            'menu': departures
         }
         return render(request, 'tours/tour.html', context=context)
