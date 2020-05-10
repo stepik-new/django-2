@@ -18,7 +18,7 @@
         <ul class="navbar-nav">
             {% for item_key, item_value in menu.items %}
               <li class="nav-item">
-                  {% if active_link %}
+                  {% if active_link == item_key %}
                     <a class="nav-link active" href="/departure/{{ item_key }}/">{{ item_value }}</a>
                   {% else %}
                     <a class="nav-link" href="/departure/{{ item_key }}/">{{ item_value }}</a>
